@@ -45,7 +45,7 @@ if ($_SESSION['escritorio']==1)
     $totalesv=$totalesv.$regfechav->total .','; 
   }
 
-  //Quitamos la última coma
+
   $fechasv=substr($fechasv, 0, -1);
   $totalesv=substr($totalesv, 0, -1);
 
@@ -70,28 +70,29 @@ if ($_SESSION['escritorio']==1)
                           <div class="small-box bg-aqua">
                               <div class="inner">
                                 <h4 style="font-size:17px;">
-                                  <strong>S/ <?php echo $totalc; ?></strong>
+                                <i class="fa-solid fa-minus fa-2xl"></i> <strong>S/ <?php echo $totalc; ?></strong>
                                 </h4>
+                                
                                 <p>Compras</p>
                               </div>
                               <div class="icon">
                                 <i class="ion ion-bag"></i>
                               </div>
-                              <a href="ingreso.php" class="small-box-footer">Compras <i class="fa fa-arrow-circle-right"></i></a>
+                              <a href="ingreso.php" class="small-box-footer"> Compras <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                           <div class="small-box bg-green">
                               <div class="inner">
                                 <h4 style="font-size:17px;">
-                                  <strong>S/ <?php echo $totalv; ?></strong>
+                                <i class="fa-solid fa-plus fa-2xl"></i> <strong>S/ <?php echo $totalv; ?></strong>
                                 </h4>
                                 <p>Ventas</p>
                               </div>
                               <div class="icon">
                                 <i class="ion ion-bag"></i>
                               </div>
-                              <a href="venta.php" class="small-box-footer">Ventas <i class="fa fa-arrow-circle-right"></i></a>
+                              <a href="venta.php" class="small-box-footer"> Ventas <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                     </div>
