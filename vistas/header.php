@@ -75,7 +75,7 @@ if (strlen(session_id()) < 1)
                   <li class="user-footer">
                     
                     <div class="pull-right">
-                      <a href="../ajax/usuario.php?op=salir" class="btn btn-default btn-flat">Cerrar</a>
+                      <a href="../ajax/usuario.php?op=salir" class="btn btn-default btn-flat"style="position: relative;left: -100px;">Cerrar</a>
                     </div>
                   </li>
                 </ul>
