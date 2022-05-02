@@ -40,18 +40,33 @@ Class Persona
 	}
 
 	//Implementar un método para listar los registros
-	public function listarp()
+	public function listarpold()
 	{
 		$sql="SELECT * FROM persona WHERE tipo_persona='Proveedor'";
 		return ejecutarConsulta($sql);		
 	}
 
+	//Implementar un método para listar los registros
+	public function listarp()
+	{
+		$sql="SELECT v.idpersona,v.tipo_persona,v.nombre,u.nombre as tipo_documento,v.num_documento,v.direccion,v.telefono,v.email FROM persona v INNER JOIN tipo_documento u ON v.tipo_documento=u.id_tipo_documento WHERE tipo_persona='Proveedor'";
+		return ejecutarConsulta($sql);		
+	}
+
+
 	//Implementar un método para listar los registros 
-	public function listarc()
+	public function listarcold()
 	{
 		$sql="SELECT * FROM persona WHERE tipo_persona='Cliente'";
 		return ejecutarConsulta($sql);		
 	}
+
+		//Implementar un método para listar los registros 
+		public function listarc()
+		{
+			$sql="SELECT v.idpersona,v.tipo_persona,v.nombre,u.nombre as tipo_documento,v.num_documento,v.direccion,v.telefono,v.email FROM persona v INNER JOIN tipo_documento u ON v.tipo_documento=u.id_tipo_documento WHERE tipo_persona='Proveedor'";
+			return ejecutarConsulta($sql);		
+		}
 }
 
 ?>

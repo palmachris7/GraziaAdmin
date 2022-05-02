@@ -73,7 +73,7 @@ if ($_SESSION['escritorio']==1)
                                 <i class="fa-solid fa-minus fa-2xl"></i> <strong>S/ <?php echo $totalc; ?></strong>
                                 </h4>
                                 
-                                <p>Compras</p>
+                                <p>Compras de hoy</p>
                               </div>
                               <div class="icon">
                                 <i class="ion ion-bag"></i>
@@ -87,7 +87,7 @@ if ($_SESSION['escritorio']==1)
                                 <h4 style="font-size:17px;">
                                 <i class="fa-solid fa-plus fa-2xl"></i> <strong>S/ <?php echo $totalv; ?></strong>
                                 </h4>
-                                <p>Ventas</p>
+                                <p>Ventas de hoy</p>
                               </div>
                               <div class="icon">
                                 <i class="ion ion-bag"></i>
