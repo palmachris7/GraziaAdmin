@@ -70,10 +70,23 @@ if ($_SESSION['compras']==1)
                             <label>Número Documento:</label>
                             <input type="text" class="form-control" name="num_documento" id="num_documento" maxlength="20" placeholder="Documento">
                           </div>
-                          <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <label>Dirección:</label>
-                            <input type="text" class="form-control" name="direccion" id="direccion" maxlength="70" placeholder="Dirección">
-                          </div>
+                         
+                          <div class="form-group  col-lg-6 col-md-7 col-sm-9 col-xs-12">
+                     <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                      <label>Dirección:</label>
+                      <input type="text" class="form-control" name="direccion" id="direccion" placeholder="Dirección">
+                    </div>
+                    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                      <label>Zona:</label>
+                      <select class="form-control select-picker" name="zona" id="zona" required>
+                      <option value=1>CENTRO</option>
+                        <option value=2>NORTE</option>
+                        <option value=3>SUR</option>
+                        <option value=4>ESTE</option>
+                        <option value=5>OESTE</option>
+                      </select>
+                      </div>
+                    </div>
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <label>Teléfono:</label>
                             <input type="text" class="form-control" name="telefono" id="telefono" maxlength="20" placeholder="Teléfono">

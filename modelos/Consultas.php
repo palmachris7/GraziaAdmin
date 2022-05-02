@@ -24,7 +24,8 @@ Class Consultas
 
 	public function ventasfechacliente($fecha_inicio,$fecha_fin,$idcliente)
 	{
-		$sql="SELECT DATE(v.fecha_hora) as fecha,u.nombre as usuario, p.nombre as cliente, c.nombre as tipo_comprobante,v.serie_comprobante,v.num_comprobante,v.total_venta,v.impuesto,v.estado FROM venta v INNER JOIN persona p ON v.idcliente=p.idpersona INNER JOIN usuario u ON v.idusuario=u.idusuario INNER JOIN tipo_comprobante c ON v.tipo_comprobante=c.id_tipo_comprobante WHERE DATE(v.fecha_hora)>='$fecha_inicio' AND DATE(v.fecha_hora)<='$fecha_fin' AND v.idcliente='$idcliente'";
+		$sql="SELECT DATE(v.fecha_hora) as fecha,u.nombre as usuario, p.nombre as cliente, c.nombre as tipo_comprobante,v.serie_comprobante,v.num_comprobante,v.total_venta,i.nombre_impuesto as impuesto,v.estado FROM venta v INNER JOIN persona p ON v.idcliente=p.idpersona INNER JOIN usuario u ON v.idusuario=u.idusuario INNER JOIN tipo_comprobante c ON v.tipo_comprobante=c.id_tipo_comprobante INNER JOIN impuesto i ON v.impuesto=i.id_impuesto WHERE DATE(v.fecha_hora)>='$fecha_inicio' AND DATE(v.fecha_hora)<='$fecha_fin' AND v.idcliente='$idcliente'";
+		
 		return ejecutarConsulta($sql);		
 	}
 	
