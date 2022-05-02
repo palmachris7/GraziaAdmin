@@ -16,11 +16,19 @@ Class Consultas
 		return ejecutarConsulta($sql);		
 	}
 
-	public function ventasfechacliente($fecha_inicio,$fecha_fin,$idcliente)
+	public function ventasfechaclienteold($fecha_inicio,$fecha_fin,$idcliente)
 	{
 		$sql="SELECT DATE(v.fecha_hora) as fecha,u.nombre as usuario, p.nombre as cliente,v.tipo_comprobante,v.serie_comprobante,v.num_comprobante,v.total_venta,v.impuesto,v.estado FROM venta v INNER JOIN persona p ON v.idcliente=p.idpersona INNER JOIN usuario u ON v.idusuario=u.idusuario WHERE DATE(v.fecha_hora)>='$fecha_inicio' AND DATE(v.fecha_hora)<='$fecha_fin' AND v.idcliente='$idcliente'";
 		return ejecutarConsulta($sql);		
 	}
+
+	public function ventasfechacliente($fecha_inicio,$fecha_fin,$idcliente)
+	{
+		$sql="SELECT DATE(v.fecha_hora) as fecha,u.nombre as usuario, p.nombre as cliente, c.nombre as tipo_comprobante,v.serie_comprobante,v.num_comprobante,v.total_venta,v.impuesto,v.estado FROM venta v INNER JOIN persona p ON v.idcliente=p.idpersona INNER JOIN usuario u ON v.idusuario=u.idusuario INNER JOIN tipo_comprobante c ON v.tipo_comprobante=c.id_tipo_comprobante WHERE DATE(v.fecha_hora)>='$fecha_inicio' AND DATE(v.fecha_hora)<='$fecha_fin' AND v.idcliente='$idcliente'";
+		return ejecutarConsulta($sql);		
+	}
+	
+
 
 	public function totalcomprahoy()
 	{
@@ -51,7 +59,7 @@ Class Consultas
 		$sql="SELECT DATE_FORMAT(fecha_hora,'%M') as fecha,SUM(total_venta) as total FROM venta GROUP by MONTH(fecha_hora) ORDER BY fecha_hora DESC limit 0,10";
 		return ejecutarConsulta($sql);
 	}
-	
+
 	// public function ventas_totales()
 	// {
 	// 	$sql="SELECT SUM(`total_venta`) as total_ventas FROM venta where `estado`= "Aceptado" ";
