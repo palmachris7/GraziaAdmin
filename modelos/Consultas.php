@@ -51,11 +51,12 @@ Class Consultas
 		$sql="SELECT DATE_FORMAT(fecha_hora,'%M') as fecha,SUM(total_venta) as total FROM venta GROUP by MONTH(fecha_hora) ORDER BY fecha_hora DESC limit 0,10";
 		return ejecutarConsulta($sql);
 	}
-	public function ventas_totales()
-	{
-		$sql="SELECT SUM(`total_venta`) as total_ventas FROM venta where `estado`= "Aceptado"";
-		return ejecutarConsulta($sql);
-	}
+	
+	// public function ventas_totales()
+	// {
+	// 	$sql="SELECT SUM(`total_venta`) as total_ventas FROM venta where `estado`= "Aceptado" ";
+	// 	return ejecutarConsulta($sql);
+	// }
 
 
 
