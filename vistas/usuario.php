@@ -89,7 +89,16 @@ if ($_SESSION['acceso']==1)
                           </div>
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <label>Cargo:</label>
-                            <input type="text" class="form-control" name="cargo" id="cargo" maxlength="20" placeholder="Cargo">
+                            <select class="form-control select-picker" name="cargo" id="cargo"  required>
+                            <option value="" disabled selected hidden>Seleccione  Cargo...</option>
+                              <option  value=3>Vendedor</option>
+                              <option value=2>Almacenero</option>
+                              <option value=1>Administrador</option>
+                            </select>
+                         
+
+
+                            <!-- <input type="text" class="form-control" name="cargo" id="cargo" maxlength="20" placeholder="Cargo"> -->
                           </div>
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <label>Login (*):</label>
