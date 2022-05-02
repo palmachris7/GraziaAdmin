@@ -23,6 +23,8 @@ if ($_SESSION['escritorio']==1)
   $regv=$rsptav->fetch_object();
   $totalv=$regv->total_venta;
 
+  $rsptau = $consulta->totalventahoy();
+
   //Datos para mostrar el gráfico de barras de las compras
   $compras10 = $consulta->comprasultimos_10dias();
   $fechasc='';
@@ -65,8 +67,28 @@ if ($_SESSION['escritorio']==1)
                     </div>
                     <!-- /.box-header -->
                     <!-- centro -->
+                 
+                  
+
                     <div class="panel-body">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                          <div class="small-box bg-aqua">
+                              <div class="inner">
+                                <h4 style="font-size:20px;">
+                                <p>Bienvenido</p>
+                           <strong><?php echo $_SESSION['nombre']; ?></strong> 
+                                </h4>
+
+                              </div>
+                              <div class="icon">
+                                <i class="ion ion-bag"></i>
+                              </div>
+                              <a href="usuario.php" class="small-box-footer">  <i class="fa fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                   
+                   
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
                           <div class="small-box bg-aqua">
                               <div class="inner">
                                 <h4 style="font-size:17px;">
@@ -81,7 +103,8 @@ if ($_SESSION['escritorio']==1)
                               <a href="ingreso.php" class="small-box-footer"> Compras <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
                           <div class="small-box bg-green">
                               <div class="inner">
                                 <h4 style="font-size:17px;">
@@ -96,8 +119,9 @@ if ($_SESSION['escritorio']==1)
                             </div>
                         </div>
                     </div>
+                    </div>
                     <div class="panel-body">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                           <div class="box box-primary">
                               <div class="box-header with-border">
                                 Compras de los últimos 10 días
@@ -107,7 +131,7 @@ if ($_SESSION['escritorio']==1)
                               </div>
                           </div>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                           <div class="box box-primary">
                               <div class="box-header with-border">
                                 Ventas de los últimos 12 meses
