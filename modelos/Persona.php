@@ -49,7 +49,7 @@ Class Persona
 	//Implementar un método para listar los registros
 	public function listarp()
 	{
-		$sql="SELECT v.idpersona,v.tipo_persona,v.nombre,u.nombre as tipo_documento,v.num_documento,v.direccion,v.telefono,v.email FROM persona v INNER JOIN tipo_documento u ON v.tipo_documento=u.id_tipo_documento WHERE tipo_persona='Proveedor'";
+		$sql="SELECT v.idpersona,v.tipo_persona,v.nombre,u.nombre as tipo_documento,v.num_documento,v.direccion,v.telefono,v.email FROM persona v INNER JOIN tipo_documento u ON v.tipo_documento=u.id_tipo_documento WHERE tipo_persona=2";
 		return ejecutarConsulta($sql);		
 	}
 
@@ -64,7 +64,7 @@ Class Persona
 		//Implementar un método para listar los registros 
 		public function listarc()
 		{
-			$sql="SELECT v.idpersona,v.tipo_persona,v.nombre,u.nombre as tipo_documento,v.num_documento,v.direccion,v.telefono,v.email FROM persona v INNER JOIN tipo_documento u ON v.tipo_documento=u.id_tipo_documento WHERE tipo_persona='Proveedor'";
+			$sql="SELECT v.idpersona,v.tipo_persona,v.nombre,u.nombre as tipo_documento,v.num_documento,v.direccion,v.telefono,v.email FROM persona v INNER JOIN tipo_documento u ON v.tipo_documento=u.id_tipo_documento WHERE tipo_persona=1";
 			return ejecutarConsulta($sql);		
 		}
 }

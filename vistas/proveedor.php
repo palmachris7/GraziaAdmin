@@ -55,7 +55,7 @@ if ($_SESSION['compras']==1)
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <label>Nombre:</label>
                             <input type="hidden" name="idpersona" id="idpersona">
-                            <input type="hidden" name="tipo_persona" id="tipo_persona" value="Proveedor">
+                            <input type="hidden" name="tipo_persona" id="tipo_persona" value=2>
                             <input type="text" class="form-control" name="nombre" id="nombre" maxlength="100" placeholder="Nombre del proveedor" required>
                           </div>
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
