@@ -86,7 +86,13 @@ if ($_SESSION['compras']==1)
                           </div>
                           <div class="form-group col-lg-2 col-md-2 col-sm-6 col-xs-12">
                             <label>Impuesto:</label>
-                            <input type="text" class="form-control" name="impuesto" id="impuesto" required="">
+                               <!-- <input type="text" class="form-control" name="impuesto" id="impuesto" required=""> -->
+                            <select class="form-control select-picker" name="impuesto" id="impuesto"  required="">
+                            <option value="" disabled selected hidden>Seleccione  Impuesto...</option>
+                              <option  value=1>IGV</option>
+                              <option value=2>RUS</option>
+                            </select>
+                     
                           </div>
                           <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
                             <a data-toggle="modal" href="#myModal">           
