@@ -92,7 +92,7 @@ if ($_SESSION['compras']==1)
                               <option  value=1>IGV</option>
                               <option value=2>RUS</option>
                             </select>
-                     
+                  
                           </div>
                           <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
                             <a data-toggle="modal" href="#myModal">           
