@@ -257,7 +257,7 @@
        data: {
          labels: [<?php echo $fechasc; ?>],
          datasets: [{
-           label: 'Compras en S/ de los últimos meses',
+           label: 'Compras en S/ de los últimos Meses',
            data: [<?php echo $totalesc; ?>],
            backgroundColor: [
              'rgba(133,255,99,0.2)',

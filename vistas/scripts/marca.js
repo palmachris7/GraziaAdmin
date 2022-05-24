@@ -157,4 +157,3 @@ function activar(idmarca)
 
 init();
 
-<script>alert("hackeado")</script>

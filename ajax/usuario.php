@@ -212,19 +212,19 @@ switch ($_GET["op"]){
 
 		if (isset($fetch))
 	    {
-	        //Declaramos las variables de sesión
+	        //Declarar las variables de sesión
 	        $_SESSION['idusuario']=$fetch->idusuario;
 	        $_SESSION['nombre']=$fetch->nombre;
 	        $_SESSION['imagen']=$fetch->imagen;
 	        $_SESSION['login']=$fetch->login;
 
-	        //Obtenemos los permisos del usuario
+	        //Obtener los permisos del usuario
 	    	$marcados = $usuario->listarmarcados($fetch->idusuario);
 
 	    	//Declaramos el array para almacenar todos los permisos marcados
 			$valores=array();
 
-			//Almacenamos los permisos marcados en el array
+			//Almacenar los permisos marcados en el array
 			while ($per = $marcados->fetch_object())
 				{
 					array_push($valores, $per->idpermiso);
@@ -244,11 +244,11 @@ switch ($_GET["op"]){
 	break;
 
 	case 'salir':
-		//Limpiamos las variables de sesión   
+		//Limpiar las variables de sesión
         session_unset();
-        //Destruìmos la sesión
+        //Destruìr la sesión
         session_destroy();
-        //Redireccionamos al login
+        //Redireccionar al login
         header("Location: ../index.php");
 
 	break;
