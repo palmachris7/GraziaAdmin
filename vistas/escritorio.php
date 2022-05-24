@@ -303,7 +303,7 @@
        data: {
          labels: [<?php echo $fechasv; ?>],
          datasets: [{
-           label: 'Ventas en S/ de los últimos Feses',
+           label: 'Ventas en S/ de los últimos Meses',
            data: [<?php echo $totalesv; ?>],
            backgroundColor: [
              'rgba(255, 99, 132, 0.2)',
