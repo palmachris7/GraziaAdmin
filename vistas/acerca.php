@@ -1,5 +1,5 @@
 <?php
-//Activamos el almacenamiento en el buffer
+//Activando almacenamiento de buffer
 ob_start();
 session_start();
 
