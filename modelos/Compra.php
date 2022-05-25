@@ -56,7 +56,7 @@ Class Compra
 	//Implementar un método para listar los registros
 	public function listar()
 	{
-		$sql="SELECT i.idcompra,DATE(i.fecha_hora) as fecha,i.idproveedor,p.nombre as proveedor,u.idusuario,u.nombre as usuario,i.tipo_comprobante,i.serie_comprobante,i.num_comprobante,i.total_compra,i.impuesto,i.estado FROM compra i INNER JOIN persona p ON i.idproveedor=p.idpersona INNER JOIN usuario u ON i.idusuario=u.idusuario ORDER BY i.idcompra desc";
+		$sql="SELECT i.idcompra,DATE(i.fecha_hora) as fecha,i.idproveedor,p.nombre as proveedor,u.idusuario,u.nombre as usuario,c.nombre as tipo_comprobante,i.serie_comprobante,i.num_comprobante,i.total_compra,i.impuesto,i.estado FROM compra i INNER JOIN persona p ON i.idproveedor=p.idpersona INNER JOIN usuario u ON i.idusuario=u.idusuario INNER JOIN tipo_comprobante c ON i.tipo_comprobante=c.id_tipo_comprobante ORDER BY i.idcompra desc;";
 		return ejecutarConsulta($sql);		
 	}
 	

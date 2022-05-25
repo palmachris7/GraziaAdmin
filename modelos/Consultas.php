@@ -10,11 +10,18 @@ Class Consultas
 
 	}
 
-	public function comprasfecha($fecha_inicio,$fecha_fin)
+	public function comprasfechaold($fecha_inicio,$fecha_fin)
 	{
 		$sql="SELECT DATE(i.fecha_hora) as fecha,u.nombre as usuario, p.nombre as proveedor,i.tipo_comprobante,i.serie_comprobante,i.num_comprobante,i.total_compra,i.impuesto,i.estado FROM compra i INNER JOIN persona p ON i.idproveedor=p.idpersona INNER JOIN usuario u ON i.idusuario=u.idusuario WHERE DATE(i.fecha_hora)>='$fecha_inicio' AND DATE(i.fecha_hora)<='$fecha_fin'";
 		return ejecutarConsulta($sql);		
 	}
+
+    public function comprasfecha($fecha_inicio,$fecha_fin)
+    {
+        $sql="SELECT DATE(i.fecha_hora) as fecha,u.nombre as usuario, p.nombre as proveedor, c.nombre as tipo_comprobante,i.serie_comprobante,i.num_comprobante,i.total_compra,n.nombre_impuesto as impuesto,i.estado FROM compra i INNER JOIN persona p ON i.idproveedor=p.idpersona INNER JOIN usuario u ON i.idusuario=u.idusuario INNER JOIN tipo_comprobante c ON i.tipo_comprobante=c.id_tipo_comprobante INNER JOIN impuesto n ON i.impuesto=n.id_impuesto WHERE DATE(i.fecha_hora)>='$fecha_inicio' AND DATE(i.fecha_hora)<='$fecha_fin'";
+        return ejecutarConsulta($sql);
+    }
+
 
 	public function ventasfechaclienteold($fecha_inicio,$fecha_fin,$idcliente)
 	{

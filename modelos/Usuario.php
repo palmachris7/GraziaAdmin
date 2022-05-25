@@ -79,7 +79,7 @@ Class Usuario
 	//Implementar un método para listar los registros
 	public function listar()
 	{
-		$sql="SELECT * FROM usuario";
+		$sql="SELECT u.idusuario as idusuario, u.nombre as nombre, d.nombre as tipo_documento, u.direccion as direccion, u.telefono as telefono, u.email as email, u.cargo as cargo, u.login as login, u.clave as clave, u.imagen as imagen, u.condicion as condicion FROM usuario u INNER JOIN tipo_documento d on u.tipo_documento=d.id_tipo_documento";
 		return ejecutarConsulta($sql);		
 	}
 	//Implementar un método para listar los permisos marcados
