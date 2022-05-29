@@ -14,9 +14,9 @@ if ($_SESSION['almacen']==1)
 {	
 require_once "../modelos/Producto.php";
 
-$articulo=new Producto();
+$producto=new Producto();
 
-$idarticulo=isset($_POST["idarticulo"])? limpiarCadena($_POST["idarticulo"]):"";
+$idproducto=isset($_POST["idproducto"])? limpiarCadena($_POST["idproducto"]):"";
 $idcategoria=isset($_POST["idcategoria"])? limpiarCadena($_POST["idcategoria"]):"";
 $codigo=isset($_POST["codigo"])? limpiarCadena($_POST["codigo"]):"";
 $nombre=isset($_POST["nombre"])? limpiarCadena($_POST["nombre"]):"";
@@ -41,43 +41,43 @@ switch ($_GET["op"]){
 				move_uploaded_file($_FILES["imagen"]["tmp_name"], "../files/articulos/" . $imagen);
 			}
 		}
-		if (empty($idarticulo)){
-			$rspta=$articulo->insertar($idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen,$idmarca);
+		if (empty($idproducto)){
+			$rspta=$producto->insertar($idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen,$idmarca);
 			echo $rspta ? "Producto registrado" : "Producto no se pudo registrar";
 		}
 		else {
-			$rspta=$articulo->editar($idarticulo,$idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen,$idmarca);
+			$rspta=$producto->editar($idproducto,$idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen,$idmarca);
 			echo $rspta ? "Producto actualizado" : "Producto no se pudo actualizar";
 		}
 	break;
 
 	case 'desactivar':
-		$rspta=$articulo->desactivar($idarticulo);
+		$rspta=$producto->desactivar($idproducto);
  		echo $rspta ? "Producto Desactivado" : "Producto no se puede desactivar";
 	break;
 
 	case 'activar':
-		$rspta=$articulo->activar($idarticulo);
+		$rspta=$producto->activar($idproducto);
  		echo $rspta ? "Producto activado" : "Producto no se puede activar";
 	break;
 
 	case 'mostrar':
-		$rspta=$articulo->mostrar($idarticulo);
+		$rspta=$producto->mostrar($idproducto);
  		//Codificar el resultado utilizando json
  		echo json_encode($rspta);
 	break;
 
 	case 'listar':
-		$rspta=$articulo->listar();
- 		//Vamos a declarar un array
+		$rspta=$producto->listar();
+ 		//declarar un array
  		$data= Array();
 
  		while ($reg=$rspta->fetch_object()){
  			$data[]=array(
- 				"0"=>($reg->condicion)?'<button class="btn btn-warning" onclick="mostrar('.$reg->idarticulo.')"><i class="fa fa-pencil"></i></button>'.
- 					' <button class="btn btn-danger" onclick="desactivar('.$reg->idarticulo.')"><i class="fa fa-close"></i></button>':
- 					'<button class="btn btn-warning" onclick="mostrar('.$reg->idarticulo.')"><i class="fa fa-pencil"></i></button>'.
- 					' <button class="btn btn-primary" onclick="activar('.$reg->idarticulo.')"><i class="fa fa-check"></i></button>',
+ 				"0"=>($reg->condicion)?'<button class="btn btn-warning" onclick="mostrar('.$reg->idproducto.')"><i class="fa fa-pencil"></i></button>'.
+ 					' <button class="btn btn-danger" onclick="desactivar('.$reg->idproducto.')"><i class="fa fa-close"></i></button>':
+ 					'<button class="btn btn-warning" onclick="mostrar('.$reg->idproducto.')"><i class="fa fa-pencil"></i></button>'.
+ 					' <button class="btn btn-primary" onclick="activar('.$reg->idproducto.')"><i class="fa fa-check"></i></button>',
  				"1"=>$reg->nombre,
  				"2"=>$reg->categoria,
  				"3"=>$reg->codigo,
@@ -95,7 +95,18 @@ switch ($_GET["op"]){
  		echo json_encode($results);
 
 	break;
+    case "selectMarca":
+        require_once "../modelos/Marca.php";
+        $marca = new Marca();
 
+        $rspta = $marca->select();
+
+        while ($reg = $rspta->fetch_object())
+                {
+                    echo '<option value=' . $reg->idmarca . '>' . $reg->nombre . '</option>';
+                }
+
+    break;
 
 	case "selectCategoria":
 		require_once "../modelos/Categoria.php";
@@ -108,6 +119,8 @@ switch ($_GET["op"]){
 					echo '<option value=' . $reg->idcategoria . '>' . $reg->nombre . '</option>';
 				}
 	break;
+
+
 
 }
 //Fin de las validaciones de acceso

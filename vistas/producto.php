@@ -1,7 +1,5 @@
 <?php
 
-$mysqli=mysqli_connect("localhost","root","root","grazia");
-$query=mysqli_query($mysqli,"SELECT * FROM marca where condicion=1");
 
 ob_start();
 session_start();
@@ -55,21 +53,19 @@ if (!isset($_SESSION["nombre"])) {
                 <form name="formulario" id="formulario" method="POST">
                   <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <label>Nombre(*):</label>
-                    <input type="hidden" name="idarticulo" id="idarticulo">
+                    <input type="hidden" name="idproducto" id="iproducto">
                     <input type="text" class="form-control" name="nombre" id="nombre" maxlength="100" placeholder="Nombre" required>
                   </div>
 
+                    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <label>Nombre(*):</label>
+                        <input type="text" name="idproducto" id="iproducto">
+                    </div>
+
                   <div class="form-group col-lg-3 col-md-6 col-sm-6 col-xs-12">
                     <label>Marca(*):</label>
-                    <select name="idmarca" id="idmarca" class="form-control selectpicker" required="">
-                    <?php 
-                        while($datos = mysqli_fetch_array($query))
-                        {
-                    ?>
-                            <option value="<?php echo $datos['idmarca']?>"> <?php echo $datos['nombre']?> </option>
-                    <?php
-                        }
-                    ?> 
+                    <select name="idmarca" id="idmarca" class="form-control selectpicker" data-live-search="true"  required>
+
                     </select>
                   </div>
 

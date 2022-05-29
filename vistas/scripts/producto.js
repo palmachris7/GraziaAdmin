@@ -15,6 +15,11 @@ function init(){
 	            $("#idcategoria").html(r);
 	            $('#idcategoria').selectpicker('refresh');
 	});
+	//Cargamos los items al select Marca
+	$.post("../ajax/producto.php?op=selectMarca", function(m){
+				$("#idmarca").html(m);
+				$('#idmarca').selectpicker('refresh');
+	});
 	
 	$("#imagenmuestra").hide();
 	$('#mAlmacen').addClass("treeview active");
@@ -31,7 +36,7 @@ function limpiar()
 	$("#imagenmuestra").attr("src","");
 	$("#imagenactual").val("");
 	$("#print").hide();
-	$("#idarticulo").val("");
+	$("#idproducto").val("");
 }
 
 //Función mostrar formulario
@@ -125,15 +130,17 @@ function guardaryeditar(e)
 	limpiar();
 }
 
-function mostrar(idarticulo)
+function mostrar(idproducto)
 {
-	$.post("../ajax/producto.php?op=mostrar",{idarticulo : idarticulo}, function(data, status)
+	$.post("../ajax/producto.php?op=mostrar",{idproducto : idproducto}, function(data, status)
 	{
 		data = JSON.parse(data);		
 		mostrarform(true);
 
 		$("#idcategoria").val(data.idcategoria);
 		$('#idcategoria').selectpicker('refresh');
+		$("#idmarca").val(data.idmarca);
+		$('#idmarca').selectpicker('refresh');
 		$("#codigo").val(data.codigo);
 		$("#nombre").val(data.nombre);
 		$("#stock").val(data.stock);
@@ -141,19 +148,19 @@ function mostrar(idarticulo)
 		$("#imagenmuestra").show();
 		$("#imagenmuestra").attr("src","../files/articulos/"+data.imagen);
 		$("#imagenactual").val(data.imagen);
- 		$("#idarticulo").val(data.idarticulo);
+ 		$("#idproducto").val(data.idproducto);
  		generarbarcode();
 
  	})
 }
 
 //Función para desactivar registros
-function desactivar(idarticulo)
+function desactivar(idproducto)
 {
-	bootbox.confirm("¿Está Seguro de desactivar el artículo?", function(result){
+	bootbox.confirm("¿Está Seguro de desactivar el producto?", function(result){
 		if(result)
         {
-        	$.post("../ajax/producto.php?op=desactivar", {idarticulo : idarticulo}, function(e){
+        	$.post("../ajax/producto.php?op=desactivar", {idproducto : idproducto}, function(e){
         		bootbox.alert(e);
 	            tabla.ajax.reload();
         	});	
@@ -162,12 +169,12 @@ function desactivar(idarticulo)
 }
 
 //Función para activar registros
-function activar(idarticulo)
+function activar(idproducto)
 {
-	bootbox.confirm("¿Está Seguro de activar el Artículo?", function(result){
+	bootbox.confirm("¿Está Seguro de activar el Producto?", function(result){
 		if(result)
         {
-        	$.post("../ajax/producto.php?op=activar", {idarticulo : idarticulo}, function(e){
+        	$.post("../ajax/producto.php?op=activar", {idproducto : idproducto}, function(e){
         		bootbox.alert(e);
 	            tabla.ajax.reload();
         	});	
