@@ -22,7 +22,7 @@ if(is_entered_data_valid()) {
         if($responseData->success){
             $success_msg = "Captcha realizado con exito, presione nuevamente para validar datos";
         }else{
-            $err_msg =  "Algo salió mal al hacer la validación, realizé nuevamente.";
+            $err_msg =  "Algo salió mal al hacer la validación, ingrese datos nuevamente.";
         }
 
     }else{

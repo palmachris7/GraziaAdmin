@@ -15,7 +15,8 @@ $("#frmAcceso").on('submit',function(e)
             }
             else{
                 bootbox.alert("Usuario y/o Password incorrectos");
-
+                document.getElementById('clavea').value = ''
+                document.getElementById('logina').value = ''
             }
 
 
