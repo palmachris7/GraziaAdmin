@@ -13,7 +13,17 @@
     border: none;
     cursor: pointer;
 }
+.togglei {
+    background: none;
+    border: none;
+    color: #337ab7;
+    /*display: none;*/
+    /*font-size: .9em;*/
+    font-weight: 600;
+    /*padding: .5em;*/
+    position: absolute;
 
+}
 .icheckbox_square-blue {
     background-position: 0 0;
 }
