@@ -53,14 +53,11 @@ if (!isset($_SESSION["nombre"])) {
                 <form name="formulario" id="formulario" method="POST">
                   <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <label>Nombre(*):</label>
-                    <input type="hidden" name="idproducto" id="iproducto">
+                    <input type="hidden" name="idproducto" id="idproducto">
                     <input type="text" class="form-control" name="nombre" id="nombre" maxlength="100" placeholder="Nombre" required>
                   </div>
 
-                    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                        <label>Nombre(*):</label>
-                        <input type="text" name="idproducto" id="iproducto">
-                    </div>
+
 
                   <div class="form-group col-lg-3 col-md-6 col-sm-6 col-xs-12">
                     <label>Marca(*):</label>

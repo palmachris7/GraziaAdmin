@@ -24,22 +24,22 @@ switch ($_GET["op"]){
 	case 'guardaryeditar':
 		if (empty($idmarca)){
 			$rspta=$marca->insertar($nombre,$descripcion);
-			echo $rspta ? "Categoría registrada" : "Categoría no se pudo registrar";
+			echo $rspta ? "Marca registrada" : "Marca no se pudo registrar";
 		}
 		else {
 			$rspta=$marca->editar($idmarca,$nombre,$descripcion);
-			echo $rspta ? "Categoría actualizada" : "Categoría no se pudo actualizar";
+			echo $rspta ? "Marca actualizada" : "Marca no se pudo actualizar";
 		}
 	break;
 
 	case 'desactivar':
 		$rspta=$marca->desactivar($idmarca);
- 		echo $rspta ? "Categoría Desactivada" : "Categoría no se puede desactivar";
+ 		echo $rspta ? "Marca Desactivada" : "Marca no se puede desactivar";
 	break;
 
 	case 'activar':
 		$rspta=$marca->activar($idmarca);
- 		echo $rspta ? "Categoría activada" : "Categoría no se puede activar";
+ 		echo $rspta ? "Marca activada" : "Marca no se puede activar";
 	break;
 
 	case 'mostrar':

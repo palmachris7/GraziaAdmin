@@ -4,9 +4,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $stringVal=$_POST["total_venta"];
     $total_venta = floatval( $stringVal );
 
+    mt_srand(4);
     $query="INSERT INTO venta 
               (idcliente,idusuario,tipo_comprobante,serie_comprobante,num_comprobante,fecha_hora,impuesto,total_venta,estado) 
-    VALUES('10','1','1','movil','movil',current_timestamp(),'1','".$total_venta."','Aceptado')";
+    VALUES('10','1','3',FLOOR(10+ RAND() * 100),FLOOR(999+ RAND() * 9999),current_timestamp(),'1','".$total_venta."','Aceptado')";
     $resultado=$mysql->query($query);
     if($resultado==true){
         echo "Venta se inserto de forma exitosa";
@@ -14,9 +15,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         echo "Error al insertar venta";
     }
 }
-
-
-
 
 
 

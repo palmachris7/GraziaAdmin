@@ -41,6 +41,7 @@ switch ($_GET["op"]){
 				move_uploaded_file($_FILES["imagen"]["tmp_name"], "../files/articulos/" . $imagen);
 			}
 		}
+        //momentaneo
 		if (empty($idproducto)){
 			$rspta=$producto->insertar($idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen,$idmarca);
 			echo $rspta ? "Producto registrado" : "Producto no se pudo registrar";
