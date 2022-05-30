@@ -20,7 +20,7 @@ if(is_entered_data_valid()) {
         $success_msg="";
         $err_msg="";
         if($responseData->success){
-            $success_msg = "Captcha realizado con exito, presione nuevamente";
+            $success_msg = "Captcha realizado con exito, presione nuevamente para validar datos";
         }else{
             $err_msg =  "Algo salió mal al hacer la validación, realizé nuevamente.";
         }
