@@ -31,7 +31,7 @@ $rspta = $venta->ventacabecera($_GET["id"]);
 $reg = $rspta->fetch_object();
 
 //Establecemos los datos de la empresa
-$empresa = "Grazia Perú S.A.C.";
+$empresa = "Spirella Perú S.A.C.";
 $documento = "20477157772";
 $direccion = "Calle Las Verdolagas,  S/N";
 $telefono = "916884456";

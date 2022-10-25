@@ -18,7 +18,7 @@ require('Ingreso.php');
 //Establecemos los datos de la empresa
 $logo = "logo.jpg";
 $ext_logo = "jpg";
-$empresa = "Grazia Perú S.A.C.";
+$empresa = "Spirella Perú S.A.C.";
 $documento = "20477157772";
 $direccion = "Calle Las Verdolagas,  S/N";
 $telefono = "916884456";

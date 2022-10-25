@@ -27,8 +27,8 @@ require 'header.php';
                     <!-- /.box-header -->
                     <!-- centro -->
                     <div class="panel-body">
-                    	<h4>Proyecto: </h4> <p>Grazia 3.0 - Sistema de Ventas, Compras y Almacén</p>
-		                <h4>Empresa: </h4> <p>Grazia Peru S.A.C.</p>
+                    	<h4>Proyecto: </h4> <p>Spirella 3.0 - Sistema de Ventas, Compras y Almacén</p>
+		                <h4>Empresa: </h4> <p>Spirella Peru S.A.C.</p>
 		                <h4>Desarrollado por: </h4> <p>palmachristopher7@gmail.com</p>
                    
                     </div>
