@@ -1,0 +1,1 @@
+{"version":1,"defects":{"MarcaTests::testAdd":4,"MarcaTests::testList":4,"Warning":6,"MarcaTest::testAdd":4,"AddTest::testAdd":4,"ListTest::testAdd":4,"ListTest::testList":4},"times":{"MarcaTests::testAdd":0.005,"MarcaTests::testList":0.006,"Warning":0.005,"MarcaTest::testAdd":0.001,"AddTest::testAdd":0.008,"ListTest::testAdd":0,"ListTest::testList":0.001}}
