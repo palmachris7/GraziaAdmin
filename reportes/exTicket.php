@@ -106,7 +106,7 @@ $email = "palmachristopher7@gmail.com";
       <td colspan="3" align="center">¡Gracias por su compra!</td>
     </tr>
     <tr>
-      <td colspan="3" align="center">Grazia</td>
+      <td colspan="3" align="center">Spirella</td>
     </tr>
     <tr>
       <td colspan="3" align="center">Lima - Perú</td>
